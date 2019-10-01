@@ -2,6 +2,11 @@
     <img src="App/Assets/Images/TOM-Legend.png" alt="Logo" width="100%">
 </div>
 
+![GitHub Release Date](https://img.shields.io/github/release-date/thecodingmachine/react-native-boilerplate)
+![GitHub last commit](https://img.shields.io/github/last-commit/thecodingmachine/react-native-boilerplate)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/thecodingmachine/react-native-boilerplate)
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/thecodingmachine/react-native-boilerplate/latest)
+![GitHub top language](https://img.shields.io/github/languages/top/thecodingmachine/react-native-boilerplate)
 
 # TheCodingMachine React Native boilerplate
 
@@ -10,7 +15,7 @@ This project is a [React Native](https://facebook.github.io/react-native/) boile
 The boilerplate provides **an architecture optimized for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic. It is extremely documented so that each piece of code that lands in your application can be understood and used.
 
 ```
-If you love this documentation, give us a star, you will be a ray of sunshine in our lives :)
+If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :)
 ```
 
 ## Architecture
@@ -41,12 +46,12 @@ The driving goal of the architecture of the boilerplate is separation of concern
 
 The boilerplate contains:
 
-- a [React Native](https://facebook.github.io/react-native/) (v**0.59.9**) application (in "[ejected](https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md)" mode to allow using dependencies that rely on native code)
+- a [React Native](https://facebook.github.io/react-native/) (v**0.60.5**) application (in "[ejected](https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md)" mode to allow using dependencies that rely on native code)
 - a [clear directory layout](#directory-layout) to provide a base architecture for your application
 - [Redux](https://redux.js.org/) (v4.0.1) to help manage state
 - [Redux Persist](https://github.com/rt2zz/redux-persist) (v5.10.0) to persist the Redux state
 - [Redux Sagas](https://redux-saga.js.org) (v1.0.2) to separate side-effects and logic from state and UI logic
-- [React Navigation](https://reactnavigation.org/) (v3.6.0) with a [`NavigationService`](App/Services/NavigationService.js) to handle routing and navigation in the app, with a splash screen setup by default
+- [React Navigation](https://reactnavigation.org/) (v3.11.2) with a [`NavigationService`](App/Services/NavigationService.js) to handle routing and navigation in the app, with a splash screen setup by default
 - [reduxsauce](https://github.com/infinitered/reduxsauce) (v1.0.1) to facilitate using Redux
 - [axios](https://github.com/axios/axios) to make API calls (v0.19.0)
 - [prettier](https://prettier.io/) and [eslint](https://eslint.org/) preconfigured for React Native
@@ -101,7 +106,22 @@ Assuming you have all the requirements installed, you can setup and run the proj
 
 - `yarn install` to install the dependencies
 - create your [configuration file `App/Config/index.js`](App/Config) from `index.dev.js` (in you are in dev environment) and fill the missing values
+- run the following steps for your platform
+
+### Android
+
+- only the first time you run the project, you need to generate a debug key with :
+  - `cd android/app`
+  - `keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000`
+  - `cd ../..` to come back to the root folder
 - `react-native run-android` to run the Android application (remember to start a simulator or connect an Android phone)
+
+### iOS
+
+- `cd ios`
+- `pod install` to install pod dependencies
+- `cd ..` to come back to the root folder
+- `yarn start` to start the metro bundler, in a dedicated terminal
 - `react-native run-ios` to run the iOS application (remember to start a simulator or connect an iPhone phone)
 
 ## Useful documentation
@@ -121,7 +141,7 @@ Assuming you have all the requirements installed, you can setup and run the proj
 
 ### App fails to start after renaming
 
-If your applicaiton fails to start after using the `yarn run rename` command, please take a look at [this issue](https://github.com/thecodingmachine/react-native-boilerplate/issues/34)
+If your application fails to start after using the `yarn run rename` command, please take a look at [this issue](https://github.com/thecodingmachine/react-native-boilerplate/issues/34)
 
 ## License
 
